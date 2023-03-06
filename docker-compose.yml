@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+
+  postgres_db:
+    image: postgres:15.2
+    container_name: postgres_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: recordings
+    volumes:
+      - ./init_postgres.sql:/docker-entrypoint-initdb.d/init_postgres.sql
+#      - ./db-data/:/var/lib/postgresql/data
+
+  mysqldb:
+    image: mysql:8.0.32
+    container_name: mysqldb
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: example
+      MYSQL_PASSWORD: example
+      MYSQL_DATABASE: recordings
+    volumes:
+      - ./init_mysql.sql:/docker-entrypoint-initdb.d/init_,ysql.sql
