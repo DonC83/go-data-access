@@ -55,15 +55,15 @@ verify.fix:
 
 ## Start the devstack
 devstack.start:
-	docker-compose -f docker-compose.yml up -d
+	docker-compose -f ./deployments/docker-compose.yml up -d
 .PHONY: devstack.start
 
 ## Stop the devstack
 devstack.stop:
-	docker-compose -f docker-compose.yml down
+	docker-compose -f ./deployments/docker-compose.yml down
 .PHONY: devstack.stop
 
 ## Show the devstack's status
 devstack.status:
-	docker-compose -f docker-compose.yml ps
+	docker-compose -f ./deployments/docker-compose.yml ps
 .PHONY: devstack.status
