@@ -1,5 +1,10 @@
 # GO Data Access
 
+This repo piggybacks off the back of the Golang tutorials found [here](https://go.dev/doc/tutorial/)
+
+It builds off the simple database tutorial and uses MySql and Postgres in docker
+to start off with.
+
 Getting colima and docker installed
 
 ```
